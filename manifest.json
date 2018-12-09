@@ -18,7 +18,7 @@
       ]
     }
   ],
-  "incognito": "split",
+  "incognito": "spanning",
   "permissions": [
     "*://*.quora.com/*"
   ]
