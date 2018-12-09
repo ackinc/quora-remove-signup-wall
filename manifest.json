@@ -1,8 +1,13 @@
 {
   "name": "Quora - Remove Signup Wall",
   "description": "Remove Quora's annoying signup wall",
-  "version": "1.0",
+  "version": "1.1",
   "manifest_version": 2,
+  "icons": {
+    "16": "images/icon-16.png",
+    "48": "images/icon-48.png",
+    "128": "images/icon-128.png"
+  },
   "content_scripts": [
     {
       "matches": [
