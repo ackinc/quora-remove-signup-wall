@@ -3,27 +3,21 @@ const hostToRemoverMap = new Map([
   ["www.quora.com", removeQuoraSignupWall],
 ]);
 
-const remover = getRemover(window.location.hostname);
-// TODO: BUG: content scripts cannot access chrome.action directly
-chrome.action.onClicked.addListener(() => {
-  console.log("Listener!");
-  remover();
-});
+main();
 
-function noOp() {}
-
-function removeQuoraSignupWall() {
-  console.log("Here!");
-  document.body.classList.remove("signup_wall_prevent_scroll");
-
-  let signupWallWrapperNode;
-  document.querySelectorAll("body > div").forEach((div) => {
-    if (/signup_wall_wrapper$/.test(div.id)) signupWallWrapperNode = div;
-  });
-  document.body.removeChild(signupWallWrapperNode);
+function main() {
+  const remover = hostToRemoverMap.get(window.location.hostname);
+  if (remover) setInterval(remover, 500);
 }
 
-function getRemover(host) {
-  console.log(host);
-  return hostToRemoverMap.get(host) || noOp;
+function removeQuoraSignupWall() {
+  const signupModal = document.querySelector(".qu-zIndex--modal_desktop");
+  if (!signupModal) return;
+
+  const contentModal = signupModal.nextElementSibling;
+  if (!contentModal) return;
+
+  signupModal.parentNode.removeChild(signupModal);
+  contentModal.classList.remove("qu-overflow--hidden");
+  contentModal.style.filter = ""; // remove blur effect
 }
