@@ -1,6 +1,6 @@
 {
-  "name": "Remove Signup Walls",
-  "description": "Remove annoying signup walls",
+  "name": "Remove Quora Wall",
+  "description": "Remove Quora's annoying signup/login wall",
   "version": "1.0",
   "manifest_version": 3,
   "icons": {
@@ -14,16 +14,7 @@
       "48": "images/icon-48x48.png",
       "128": "images/icon-128x128.png"
     },
-    "default_title": "Remove sign-up wall"
-  },
-  "commands": {
-    "_execute_action": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+R",
-        "mac": "MacCtrl+Shift+R"
-      },
-      "description": "Removes signup wall"
-    }
+    "default_title": "Remove Quora Wall"
   },
   "content_scripts": [
     {
