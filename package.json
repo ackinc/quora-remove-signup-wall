@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "git@github.com:ackinc/quora-remove-signup-wall.git",
   "author": "Anirudh Nimmagadda <anirudh.nimmagadda@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "make-dist": "find . -type f | grep -v .git | xargs zip dist.zip"
   }
