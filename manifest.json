@@ -1,7 +1,7 @@
 {
   "name": "Remove Quora Wall",
   "description": "Remove Quora's annoying signup/login wall",
-  "version": "1.0",
+  "version": "1.0.0",
   "manifest_version": 3,
   "icons": {
     "16": "images/icon-16x16.png",
@@ -18,16 +18,10 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.quora.com/*"
-      ],
-      "js": [
-        "src/foreground.js"
-      ]
+      "matches": ["*://*.quora.com/*"],
+      "js": ["src/foreground.js"]
     }
   ],
   "incognito": "spanning",
-  "host_permissions": [
-    "*://*.quora.com/*"
-  ]
+  "host_permissions": ["*://*.quora.com/*"]
 }
